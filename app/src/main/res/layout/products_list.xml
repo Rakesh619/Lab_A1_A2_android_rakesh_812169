@@ -1,0 +1,55 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/medium"
+    android:layout_marginRight="@dimen/medium"
+    android:layout_marginBottom="@dimen/small"
+    android:layout_marginTop="@dimen/small"
+    android:background="?colorOnPrimary"
+    android:elevation="2dp"
+    android:gravity="center_vertical"
+    android:translationZ="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small"
+                android:singleLine="true"
+                android:text="Name"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/product_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small"
+                android:singleLine="true"
+                android:text="Description" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/small"
+            android:text="Price$"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

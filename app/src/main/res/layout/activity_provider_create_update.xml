@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ProviderCreateUpdate">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/provider_name_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:hint="Product Name"
+        android:imeOptions="actionNext"
+        android:padding="@dimen/medium"
+        android:textColor="?colorOnBackground"
+        android:textSize="@dimen/textmedium" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/provider_email_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:hint="Product Email"
+        android:imeOptions="actionNext"
+        android:padding="@dimen/medium"
+        android:textColor="?colorOnBackground"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/provider_phone_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:hint="Provider Phone"
+        android:imeOptions="actionNext"
+        android:padding="@dimen/medium"
+        android:textColor="?colorOnBackground"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/products_disp_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginTop="@dimen/medium"
+        android:text="Products:"
+        android:textSize="@dimen/textmedium"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/provider_products_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>
