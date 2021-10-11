@@ -7,63 +7,94 @@
     android:orientation="vertical"
     tools:context=".ProductCreateUpdate">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/product_name_et"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/product_name_et_tl"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusable="false"
-        android:hint="Product Name"
-        android:imeOptions="actionNext"
-        android:padding="@dimen/medium"
-        android:textColor="?colorOnBackground"
-        android:textSize="@dimen/textmedium" />
+        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginRight="@dimen/medium"
+        android:layout_marginBottom="@dimen/small"
+        android:background="?android:colorForegroundInverse"
+        android:hint="Product Name">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/product_description_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="false"
-        android:hint="Product Description"
-        android:imeOptions="actionNext"
-        android:padding="@dimen/medium"
-        android:textColor="?colorOnBackground"
-        android:textSize="14sp" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/product_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:textColor="?android:colorForeground" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/product_price_et"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/product_description_et_tl"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusable="false"
-        android:hint="Product Price"
-        android:imeOptions="actionNext"
-        android:padding="@dimen/medium"
-        android:textColor="?colorOnBackground"
-        android:textSize="16sp" />
+        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginRight="@dimen/medium"
+        android:layout_marginBottom="@dimen/small"
+        android:background="?android:colorForegroundInverse"
+        android:hint="Product Description">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/product_description_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:textColor="?android:colorForeground" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/product_price_et_tl"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginRight="@dimen/medium"
+        android:layout_marginBottom="@dimen/small"
+        android:background="?android:colorForegroundInverse"
+        android:hint="Product Price">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/product_price_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:textColor="?android:colorForeground" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/provider_disp_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:layout_marginLeft="@dimen/medium"
         android:layout_marginTop="@dimen/medium"
+        android:text="Provider Details:"
         android:textSize="@dimen/textmedium"
-        android:text="Provider Details:" />
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/provider_name_disp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/small"
         android:layout_marginLeft="@dimen/medium"
+        android:padding="@dimen/small"
         android:textSize="16sp" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/provider_email_disp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/small"
         android:layout_marginLeft="@dimen/medium"
+        android:padding="@dimen/small"
         android:textSize="16sp" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -73,5 +104,28 @@
         android:layout_marginLeft="@dimen/medium"
         android:padding="@dimen/small"
         android:textSize="16sp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_create_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginRight="@dimen/medium"
+        android:layout_marginBottom="@dimen/medium"
+        android:background="?android:colorForeground"
+        android:text="Add Provider"
+        android:textAllCaps="false"
+        android:textColor="?android:colorForegroundInverse" />
 
 </LinearLayout>

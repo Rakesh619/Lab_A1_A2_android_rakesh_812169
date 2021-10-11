@@ -1,35 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/product_search_tl"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/product_search_tl"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/medium"
+            android:layout_marginTop="@dimen/small"
+            android:layout_marginRight="@dimen/medium"
+            android:layout_marginBottom="@dimen/small"
+            android:background="?android:colorForegroundInverse"
+            android:hint="Search Product">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/product_search_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="?android:colorForeground" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/product_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/product_search_tl"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/medium"
-        android:layout_marginTop="@dimen/small"
         android:layout_marginRight="@dimen/medium"
-        android:layout_marginBottom="@dimen/small"
-        android:background="?android:colorForegroundInverse"
-        android:hint="Search Product">
+        android:layout_marginBottom="@dimen/medium"
+        android:background="?android:colorForeground"
+        android:text="Add Product"
+        android:textAllCaps="false"
+        android:textColor="?android:colorForegroundInverse" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/product_search_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="?android:colorForeground"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/product_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/product_search_tl"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-</RelativeLayout>
+</LinearLayout>

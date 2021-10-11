@@ -7,38 +7,112 @@
     android:orientation="vertical"
     tools:context=".ProviderCreateUpdate">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/provider_name_et"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/provider_name_tl"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusable="false"
-        android:hint="Product Name"
-        android:imeOptions="actionNext"
-        android:padding="@dimen/medium"
-        android:textColor="?colorOnBackground"
-        android:textSize="@dimen/textmedium" />
+        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginRight="@dimen/medium"
+        android:layout_marginBottom="@dimen/small"
+        android:background="?android:colorForegroundInverse"
+        android:hint="Provider Name">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/provider_email_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="false"
-        android:hint="Product Email"
-        android:imeOptions="actionNext"
-        android:padding="@dimen/medium"
-        android:textColor="?colorOnBackground"
-        android:textSize="14sp" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/provider_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:textColor="?android:colorForeground" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/provider_phone_et"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/provider_email_tl"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusable="false"
-        android:hint="Provider Phone"
-        android:imeOptions="actionNext"
-        android:padding="@dimen/medium"
-        android:textColor="?colorOnBackground"
-        android:textSize="16sp" />
+        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginRight="@dimen/medium"
+        android:layout_marginBottom="@dimen/small"
+        android:background="?android:colorForegroundInverse"
+        android:hint="Provider Email">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/provider_email_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:textColor="?android:colorForeground" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/provider_phone_tl"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginRight="@dimen/medium"
+        android:layout_marginBottom="@dimen/small"
+        android:background="?android:colorForegroundInverse"
+        android:hint="Provider Phone">
+
+        <FrameLayout
+            android:id="@+id/provider_com"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/provider_call_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/small"
+                    android:layout_weight="1"
+                    android:padding="@dimen/medium"
+                    android:text="Call"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/medium"
+                    app:icon="@android:drawable/sym_call_outgoing"
+                    app:iconGravity="start"
+                    app:iconSize="@dimen/medium" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/provider_email_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/small"
+                    android:layout_weight="1"
+                    android:padding="@dimen/medium"
+                    android:text="email"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/medium"
+                    app:icon="@android:drawable/ic_dialog_email"
+                    app:iconGravity="start"
+                    app:iconSize="@dimen/medium" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/provider_phone_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789+"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
+            android:maxLength="13"
+            android:textColor="?android:colorForeground" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/products_disp_heading"
@@ -55,5 +129,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <fragment
+        android:id="@+id/provider_mapview"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_create_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginRight="@dimen/medium"
+        android:layout_marginBottom="@dimen/medium"
+        android:background="?android:colorForeground"
+        android:text="Add Provider"
+        android:textAllCaps="false"
+        android:textColor="?android:colorForegroundInverse" />
 
 </LinearLayout>

@@ -2,9 +2,12 @@ package com.example.lab_a1_a2_android_rakesh_812169.database.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import androidx.room.Relation;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity(tableName = "providers")
 public class Provider implements Serializable {
@@ -26,7 +29,11 @@ public class Provider implements Serializable {
     @ColumnInfo(name = "provider_lng")
     private double provider_lng;
 
-    public Provider(){}
+    @Ignore
+    private List<Product> products;
+
+    public Provider() {
+    }
 
     public Provider(String provider_name, String provider_email, String provider_phone) {
         this.provider_name = provider_name;
@@ -89,4 +96,18 @@ public class Provider implements Serializable {
     public void setProvider_lng(double provider_lng) {
         this.provider_lng = provider_lng;
     }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    @Override
+    public String toString() {
+        return  provider_name;
+    }
+
 }
